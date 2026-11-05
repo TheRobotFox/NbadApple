@@ -53,6 +53,18 @@ void cx_timer_stop(void)
     TIMER(0x08) &= ~ENABLE;
 }
 
+int cx_timer_set_period(uint32_t reload)
+{
+    if (!saved || !reload)
+        return -1;
+    uint32_t control = TIMER(0x08);
+    TIMER(0x08) = control & ~ENABLE;
+    cx_timer_ack();
+    TIMER(0x00) = reload;
+    TIMER(0x08) = control;
+    return 0;
+}
+
 uint32_t cx_timer_value(void)
 {
     return TIMER(0x04);

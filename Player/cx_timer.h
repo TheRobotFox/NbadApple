@@ -8,6 +8,8 @@ int cx_timer_init(uint32_t reload);
 void cx_timer_restore(void);
 void cx_timer_start(void);
 void cx_timer_stop(void);
+/* Restart the countdown at a new period without replacing saved OS state. */
+int cx_timer_set_period(uint32_t reload);
 uint32_t cx_timer_value(void);
 int cx_timer_pending(void);
 void cx_timer_ack(void);

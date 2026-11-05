@@ -26,6 +26,11 @@ vpath %.elf $(DISTDIR)
 
 all: $(EXE).tns
 
+Video.o: frame_offsets.h
+
+frame_offsets.h: ../frames.tns ../generate_offsets.py
+	python3 ../generate_offsets.py
+
 %.o: %.c
 	$(GCC) $(GCCFLAGS) -c $< -o $@
 

@@ -22,6 +22,10 @@ ENTER - start/pause
 
 +/-   - Jump one frame forward/backward
 
+×/÷   - Increase/decrease playback speed (0.25×, 0.5×, 1×, 2×, 4×; starts at 1×)
+
+0     - Restart from frame zero
+
 ESC   - Exit the Simulation
 
 ![20210420_180725](https://user-images.githubusercontent.com/71556523/115429306-94347700-a203-11eb-8533-b1ba34323dc2.jpg)

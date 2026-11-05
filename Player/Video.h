@@ -3,16 +3,16 @@
 #include <nspireio/nspireio.h>
 #include "util.h"
 
-#define ENCODEDBUFFERCHACHE 21626
+#define ENCODEDBUFFERCHACHE 21627
 #define PIXELS (320*240)
-#define FRAMES 6572
+#define FRAMES 6571
 
-nio_console console;
+extern nio_console console;
 
 typedef struct {
 	FILE* File;
 	short current_frame;
-	int* frame_offsets;
+    unsigned int encoded_length;
 	unsigned char* frame_encoded;
 	short* Frame;
 } Video;
